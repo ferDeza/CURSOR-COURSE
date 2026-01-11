@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Tareas - Flask App{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>📋 Lista de Tareas</h1>
+    <p>Gestiona tus tareas pendientes de manera sencilla</p>
+</div>
+
+<div class="content-section">
+    <h2>Agregar Nueva Tarea</h2>
+    <form method="POST" action="{{ url_for('main.agregar') }}" class="task-form">
+        <div class="form-group">
+            <input 
+                type="text" 
+                name="texto" 
+                placeholder="Escribe una nueva tarea..." 
+                required
+                class="task-input"
+            >
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
+    </form>
+</div>
+
+<div class="content-section">
+    <h2>Mis Tareas</h2>
+    {% if tareas %}
+        <ul class="task-list">
+            {% for tarea in tareas %}
+            <li class="task-item {% if tarea.completada %}completed{% endif %}">
+                <span class="task-text">
+                    {% if tarea.completada %}
+                        <s>{{ tarea.texto }}</s>
+                    {% else %}
+                        {{ tarea.texto }}
+                    {% endif %}
+                </span>
+                <span class="task-actions">
+                    {% if not tarea.completada %}
+                    <a href="{{ url_for('main.completar', id=tarea.id) }}" class="btn btn-success btn-sm">
+                        ✓ Completar
+                    </a>
+                    {% else %}
+                    <span class="task-completed-badge">✓ Completada</span>
+                    {% endif %}
+                </span>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-tasks">No hay tareas pendientes. ¡Agrega una nueva tarea arriba!</p>
+    {% endif %}
+</div>
+{% endblock %}
+

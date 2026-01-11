@@ -42,3 +42,6 @@ $RECYCLE.BIN/
 # Logs
 *.log
 *.tmp
+
+# Datos de la aplicación
+tareas.json
