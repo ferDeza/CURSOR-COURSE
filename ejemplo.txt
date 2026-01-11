@@ -1,0 +1,1 @@
+Ejemplo de uso de cursor para contar palabras usando su autocompletado
