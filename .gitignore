@@ -1,0 +1,10 @@
+venv/   # Ignora el directorio de virtualenv
+.env     # Ignora el archivo de entorno
+__pycache__/  # Ignora el directorio de caché de Python
+*.pyc        # Ignora los archivos de caché de Python
+*.pyo        # Ignora los archivos de caché de Python optimizados
+*.pyd        # Ignora los archivos de caché de Python dinámicos
+*.pyw        # Ignora los archivos de caché de Python web
+*.pyz        # Ignora los archivos de caché de Python zip
+*.pywz       # Ignora los archivos de caché de Python web zip
+*.pyz        # Ignora los archivos de caché de Python zip
