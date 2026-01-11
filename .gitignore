@@ -1,10 +1,44 @@
-venv/   # Ignora el directorio de virtualenv
-.env     # Ignora el archivo de entorno
-__pycache__/  # Ignora el directorio de caché de Python
-*.pyc        # Ignora los archivos de caché de Python
-*.pyo        # Ignora los archivos de caché de Python optimizados
-*.pyd        # Ignora los archivos de caché de Python dinámicos
-*.pyw        # Ignora los archivos de caché de Python web
-*.pyz        # Ignora los archivos de caché de Python zip
-*.pywz       # Ignora los archivos de caché de Python web zip
-*.pyz        # Ignora los archivos de caché de Python zip
+# Virtualenv
+venv/
+env/
+ENV/
+
+# Variables de entorno
+.env
+.env.local
+
+# Python - Archivos de caché
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+
+# Python - Archivos compilados y distribuibles
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Archivos específicos de Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+# IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+*.tmp
